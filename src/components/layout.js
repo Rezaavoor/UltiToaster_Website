@@ -14,6 +14,7 @@ export default function Layout({ children }) {
           * {
             box-sizing: border-box;
             margin: 0;
+            padding: 0;
           }
           html,
           body {
@@ -24,6 +25,7 @@ export default function Layout({ children }) {
             font-size: 15px;
             background-color: ${themes.yellow};
             color: ${themes.text_primary};
+            overflow-x: hidden;
           }
         `}
       />
@@ -35,7 +37,7 @@ export default function Layout({ children }) {
       <Header />
       <main
         css={css`
-          width: 100%;
+          width: 100vw;
           height: 100%;
         `}
       >
