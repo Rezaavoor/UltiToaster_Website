@@ -23,7 +23,7 @@ export default function Header() {
     const scrollIndicator = document.querySelector('.scrollIndicator');
     const showHeaderLine = e => {
       if (!e[0].isIntersecting) {
-        header.style.boxShadow = '0 0 5px #000';
+        header.style.boxShadow = '0 6px 6px -6px #000';
         header.style.height = '50px';
         header.style.background = themes.yellow;
       } else {
@@ -41,55 +41,62 @@ export default function Header() {
   return (
     <header
       css={css`
-        /* box-shadow: 0 0 5px #000; */
-        display: flex;
         position: fixed;
         height: 50px;
         width: 100%;
         top: 0;
-        left: 0;
-        align-items: center;
         transition: all 0.5s;
         z-index: 10;
       `}
     >
-      <NavLink
+      <div
         css={css`
-          margin-left: 5vw;
-          width: 80px;
-        `}
-        to="/"
-      >
-        <img width="100%" src={Logo} />
-      </NavLink>
-      <nav
-        css={css`
-          position: absolute;
-          left: 50%;
-          transform: translatex(-50%);
-          width: 500px;
           display: flex;
-          justify-content: center;
-          * {
-            &:hover {
-              box-shadow: 0 2px 2px -2px #000;
-            }
-          }
+          height: 100%;
+          width: 100%;
+          max-width: 1300px;
+          margin: auto;
+          align-items: center;
         `}
       >
-        <NavLink activeClassName="current-page" to="/">
-          PRODUCT
+        <NavLink
+          css={css`
+            margin-left: 5vw;
+            width: 80px;
+          `}
+          to="/"
+        >
+          <img width="100%" src={Logo} />
         </NavLink>
-        <NavLink activeClassName="current-page" to="/app/">
-          APP
-        </NavLink>
-        <NavLink activeClassName="current-page" to="/get-started/">
-          GET STARTED
-        </NavLink>
-        <NavLink activeClassName="current-page" to="/about/">
-          ABOUT
-        </NavLink>
-      </nav>
+        <nav
+          css={css`
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            * {
+              &:hover {
+                box-shadow: 0 2px 2px -2px #000;
+              }
+            }
+          `}
+        >
+          <NavLink activeClassName="current-page" to="/">
+            PRODUCT
+          </NavLink>
+          <NavLink activeClassName="current-page" to="/app/">
+            APP
+          </NavLink>
+          <NavLink activeClassName="current-page" to="/get-started/">
+            GET STARTED
+          </NavLink>
+          <NavLink activeClassName="current-page" to="/about/">
+            ABOUT
+          </NavLink>
+        </nav>
+      </div>
     </header>
   );
 }
