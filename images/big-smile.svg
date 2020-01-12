@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="303.673" height="645.285" viewBox="0 0 303.673 645.285" preserveAspectRatio="none">
+  <g id="big-smile" transform="translate(11.005 24.68)">
+    <path id="Path_21" data-name="Path 21" d="M596.277,0S454.392,56.483,305.323,56.483,0,0,0,0" transform="translate(217.185 596.277) rotate(-90)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="38" opacity="0.08"/>
+    <path id="Path_22" data-name="Path 22" d="M0,167.072V64.028s0-23.193,24.356-47.55,243.663-19.447,263.858,0,21.244,47.55,21.244,47.55V167.072" transform="translate(0 461.522) rotate(-90)" fill="none" stroke="#707070" stroke-width="22" opacity="0.08"/>
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(73.839 423.398) rotate(-90)" fill="#707070" stroke="#707070" stroke-width="1" opacity="0.08">
+      <ellipse cx="23.5" cy="19.5" rx="23.5" ry="19.5" stroke="none"/>
+      <ellipse cx="23.5" cy="19.5" rx="23" ry="19" fill="none"/>
+    </g>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(73.839 226.562) rotate(-90)" fill="#707070" stroke="#707070" stroke-width="1" opacity="0.08">
+      <ellipse cx="23.5" cy="19.5" rx="23.5" ry="19.5" stroke="none"/>
+      <ellipse cx="23.5" cy="19.5" rx="23" ry="19" fill="none"/>
+    </g>
+  </g>
+</svg>
