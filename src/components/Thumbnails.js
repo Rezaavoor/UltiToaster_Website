@@ -14,6 +14,7 @@ export default function Thumbnails(props) {
     left: ${props.left};
     top: ${props.top};
     opacity: ${props.opacity};
+    z-index: 0;
   `;
   const Smile = styled.img`
     position: absolute;
@@ -22,6 +23,7 @@ export default function Thumbnails(props) {
     left: ${props.left};
     top: ${props.top};
     opacity: ${props.opacity};
+    z-index: 0;
   `;
 
   if (props.dotsDark) return <Dots src={dotsDark} />;
