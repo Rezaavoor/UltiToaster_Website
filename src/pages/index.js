@@ -7,6 +7,7 @@ import Background from '../components/Background';
 import backgroundSvg from '../../images/product-background.svg';
 import ultiToasterSvg from '../../images/UltiToaster.svg';
 import Thumbnails from '../components/Thumbnails';
+import MainHero from '../components/mainHero/MainHero';
 
 export default function Product() {
   //prettier-ignore
@@ -33,14 +34,15 @@ export default function Product() {
       <div
         css={css`
           height: 3200px;
-          width: 1300px; /* everything is this width except the background image */
+          width: 100%;
+          max-width: 1300px; /* everything is this width except the background image */
           margin: auto;
           position: relative;
-          /* border: 1px solid black; */
+          border: 1px solid #00000000; /* a weird bug is fixed by just adding a hidden border to this guy! */
         `}
       >
         <Background src={backgroundSvg} width="100vw" height="3200px" />
-        <p css={css``}>This is the fkn UltiToaster product page</p>
+        <MainHero />
         {allThumbnails}
       </div>
     </Layout>
