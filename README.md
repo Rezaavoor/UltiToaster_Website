@@ -1,3 +1,3 @@
 ## UltiToaster Website
 
-The webstie of the product UltiToaster
+The website of the product UltiToaster
