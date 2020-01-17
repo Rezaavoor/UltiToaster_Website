@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import themes from '../../themes/themes';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import indicatorBaseImg from '../../../images/indicator-base.svg';
 
 export default function MainHero() {
   const Image = styled(Img)`
@@ -25,6 +27,42 @@ export default function MainHero() {
     justify-content: center;
     /* border: 1px black solid; */
   `;
+  const Indicator = styled.div`
+    height: 70%;
+    position: relative;
+    top: -5%;
+    left: -10%;
+  `;
+  const IndicatorBaseImg = styled.img`
+    width: 42px;
+    height: 100%;
+    position: absolute;
+  `;
+  const Points = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  `;
+  const Point = styled.div`
+    background: ${themes.white};
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.3s;
+
+    &:hover {
+      // prettier-ignore
+      /* background: ${themes.text_primary}; */
+      width: 15px;
+      height: 15px;
+      box-shadow: 0px 0px 20px 10px ${themes.white};
+      transform: translate(-2.5px, 2.5px);
+      &:first-child {
+        transform: translate(-2.5px, -2.5px); /* because i dont know! first point was different somehow! */
+      }
+    }
+  `;
 
   const { image } = useStaticQuery(graphql`
     query {
@@ -38,7 +76,7 @@ export default function MainHero() {
     }
   `);
   return (
-    <div /* main */
+    <section /* main */
       css={css`
         width: 100%;
         display: flex;
@@ -59,14 +97,44 @@ export default function MainHero() {
       </Text>
       <ImageContainer>
         <Image fluid={image.sharp.fluid} />
-        <p
-          css={css`
-            width: 20px;
-          `}
-        >
-          indicator
-        </p>
+        <Indicator>
+          <IndicatorBaseImg src={indicatorBaseImg} />
+          <Points>
+            <Point className="1" css={css``} />
+            <Point
+              className="2"
+              css={css`
+                bottom: 75%;
+                left: calc(
+                  28px - 5px
+                ); /*hard coded. Might need adjustment in mobile design */
+              `}
+            />
+            <Point
+              className="3"
+              css={css`
+                bottom: 50%;
+                left: calc(41px - 5px);
+              `}
+            />
+            <Point
+              className="4"
+              css={css`
+                bottom: 25%;
+                left: calc(
+                  32px - 5px
+                ); /*hard coded. Might need adjustment in mobile design */
+              `}
+            />
+            <Point
+              className="5"
+              css={css`
+                bottom: 0;
+              `}
+            />
+          </Points>
+        </Indicator>
       </ImageContainer>
-    </div>
+    </section>
   );
 }
