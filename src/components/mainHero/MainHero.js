@@ -7,6 +7,16 @@ import Img from 'gatsby-image';
 import indicatorBaseImg from '../../../images/indicator-base.svg';
 
 export default function MainHero() {
+  const ProductContainer = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    height: 420px;
+    position: relative;
+    /* border: 1px black solid; */
+    z-index: 1;
+  `;
   const Image = styled(Img)`
     /* height: 100%; */
     width: 70%;
@@ -50,7 +60,7 @@ export default function MainHero() {
     border-radius: 50%;
     position: absolute;
     transition: all 0.3s;
-
+    cursor: pointer;
     &:hover {
       // prettier-ignore
       /* background: ${themes.text_primary}; */
@@ -61,6 +71,30 @@ export default function MainHero() {
       &:first-child {
         transform: translate(-2.5px, -2.5px); /* because i dont know! first point was different somehow! */
       }
+    }
+  `;
+  const BuyButton = styled.div`
+    background-color: ${themes.yellow_light};
+    height: 55px;
+    width: 200px;
+    border-radius: 55px;
+    border: 2px solid ${themes.white};
+    color: ${themes.text_secondary};
+    text-align: center;
+    vertical-align: center;
+    line-height: 55px;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    text-shadow: 7px 7px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.2);
+    margin: -100px 80px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    &:hover {
+      /* background-color: ${themes.yellow}; */
+      border: 2px solid ${themes.yellow};
+      /* color: ${themes.text_primary}; */
     }
   `;
 
@@ -80,61 +114,63 @@ export default function MainHero() {
       css={css`
         width: 100%;
         display: flex;
-        align-items: center;
-        margin-top: 150px;
-        height: 420px;
+        flex-direction: column;
+        align-items: flex-start;
         position: relative;
         /* border: 1px black solid; */
         z-index: 1;
       `}
     >
-      <Text>
-        TAKE <br />
-        YOUR LIFE <br />
-        TO <br />
-        ANOTHER <br />
-        LEV3L <br />
-      </Text>
-      <ImageContainer>
-        <Image fluid={image.sharp.fluid} />
-        <Indicator>
-          <IndicatorBaseImg src={indicatorBaseImg} />
-          <Points>
-            <Point className="1" css={css``} />
-            <Point
-              className="2"
-              css={css`
-                bottom: 75%;
-                left: calc(
-                  28px - 5px
-                ); /*hard coded. Might need adjustment in mobile design */
-              `}
-            />
-            <Point
-              className="3"
-              css={css`
-                bottom: 50%;
-                left: calc(41px - 5px);
-              `}
-            />
-            <Point
-              className="4"
-              css={css`
-                bottom: 25%;
-                left: calc(
-                  32px - 5px
-                ); /*hard coded. Might need adjustment in mobile design */
-              `}
-            />
-            <Point
-              className="5"
-              css={css`
-                bottom: 0;
-              `}
-            />
-          </Points>
-        </Indicator>
-      </ImageContainer>
+      <ProductContainer>
+        <Text>
+          TAKE <br />
+          YOUR LIFE <br />
+          TO <br />
+          ANOTHER <br />
+          LEV3L <br />
+        </Text>
+        <ImageContainer>
+          <Image fluid={image.sharp.fluid} />
+          <Indicator>
+            <IndicatorBaseImg src={indicatorBaseImg} />
+            <Points>
+              <Point className="1" css={css``} />
+              <Point
+                className="2"
+                css={css`
+                  bottom: 75%;
+                  left: calc(
+                    28px - 5px
+                  ); /*hard coded. Might need adjustment in mobile design */
+                `}
+              />
+              <Point
+                className="3"
+                css={css`
+                  bottom: 50%;
+                  left: calc(41px - 5px);
+                `}
+              />
+              <Point
+                className="4"
+                css={css`
+                  bottom: 25%;
+                  left: calc(
+                    32px - 5px
+                  ); /*hard coded. Might need adjustment in mobile design */
+                `}
+              />
+              <Point
+                className="5"
+                css={css`
+                  bottom: 0;
+                `}
+              />
+            </Points>
+          </Indicator>
+        </ImageContainer>
+      </ProductContainer>
+      <BuyButton>GET IT NOW</BuyButton>
     </section>
   );
 }
