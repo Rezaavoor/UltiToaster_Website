@@ -11,10 +11,8 @@ export default function MainHero() {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 150px;
-    height: 420px;
+    height: 100%;
     position: relative;
-    /* border: 1px black solid; */
     z-index: 1;
   `;
   const Image = styled(Img)`
@@ -35,7 +33,6 @@ export default function MainHero() {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px black solid; */
   `;
   const Indicator = styled.div`
     height: 70%;
@@ -68,7 +65,7 @@ export default function MainHero() {
       height: 15px;
       box-shadow: 0px 0px 20px 10px ${themes.white};
       transform: translate(-2.5px, 2.5px);
-      &:first-child {
+      &:first-of-type {
         transform: translate(-2.5px, -2.5px); /* because i dont know! first point was different somehow! */
       }
     }
@@ -113,11 +110,13 @@ export default function MainHero() {
     <section /* main */
       css={css`
         width: 100%;
+        height: 420px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         position: relative;
-        /* border: 1px black solid; */
+        /* border: 1px white solid; */
+        margin-top: 150px;
         z-index: 1;
       `}
     >
