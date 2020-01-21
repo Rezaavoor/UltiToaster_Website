@@ -8,6 +8,7 @@ import backgroundSvg from '../../images/product-background.svg';
 import ultiToasterSvg from '../../images/UltiToaster.svg';
 import Thumbnails from '../components/Thumbnails';
 import MainHero from '../components/mainHero/MainHero';
+import ProductInfo from '../components/ProductInfo';
 
 export default function Product() {
   //prettier-ignore
@@ -20,13 +21,14 @@ export default function Product() {
           right: 0;
           top: 600px;
         `} />
-      <Thumbnails dotsDarkSmall width="100px" height="235px" left="90%" top="-44px" />
-      <Thumbnails dotsLightSmall width="230px" height="352px" left="0" top="200px" opacity="0.5" />
-      <Thumbnails smile width="200px" height="400px" left="85%" top="250px" />
-      <Thumbnails smile width="200px" height="400px" left="50%" top="1150px" />
-      <Thumbnails dotsDark width="400px" height="235px" left="-30px" top="1000px" />
-      <Thumbnails dotsLight width="800px" height="352px" left="50%" top="1400px" opacity="0.5" />
-      <Thumbnails dotsLightSmall width="150px" height="352px" left="-30px" top="2000px" opacity="0.8" />
+      <Thumbnails animate={{to:{x:'-50vw',y:'0'},duration:'50s'}} dotsDarkSmall width="100px" height="235px" left="90%" top="-44px" />
+      <Thumbnails animate={{to:{x:'100px',y:'0'},duration:'30s'}} dotsLightSmall width="230px" height="352px" left="0" top="200px" opacity="0.5" />
+      <Thumbnails animate={{to:{x:'100px',y:'-50px'},duration:'40s'}} smile width="200px" height="400px" left="65%" top="250px" />
+      <Thumbnails animate={{to:{x:'-50vw',y:'-50px'},duration:'40s'}} smile width="200px" height="400px" left="50%" top="1150px" />
+      <Thumbnails animate={{to:{x:'0px',y:'-50px'},duration:'20s'}} dotsDark width="400px" height="235px" left="30px" top="650px" />
+      <Thumbnails animate={{to:{x:'100px',y:'50px'},duration:'35s'}} dotsDark width="400px" height="235px" left="-30px" top="1500px" />
+      <Thumbnails dotsLight width="800px" height="352px" left="50%" top="800px" opacity="0.5" />
+      <Thumbnails animate={{to:{x:'80vw',y:'0px'},duration:'60s'}} dotsLightSmall width="150px" height="352px" left="-30px" top="2000px" opacity="0.8" />
     </>
   );
   return (
@@ -43,6 +45,7 @@ export default function Product() {
       >
         <Background src={backgroundSvg} width="100vw" height="3200px" />
         <MainHero />
+        <ProductInfo />
         {allThumbnails}
       </div>
     </Layout>
