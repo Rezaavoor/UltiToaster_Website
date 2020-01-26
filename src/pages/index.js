@@ -9,6 +9,7 @@ import ultiToasterSvg from '../../images/UltiToaster.svg';
 import Thumbnails from '../components/Thumbnails';
 import MainHero from '../components/mainHero/MainHero';
 import ProductInfo from '../components/ProductInfo';
+import Footer from '../components/Footer';
 
 export default function Product() {
   //prettier-ignore
@@ -46,6 +47,7 @@ export default function Product() {
         <Background src={backgroundSvg} width="100vw" height="3200px" />
         <MainHero />
         <ProductInfo />
+        <Footer />
         {allThumbnails}
       </div>
     </Layout>

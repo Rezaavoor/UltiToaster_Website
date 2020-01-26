@@ -39,6 +39,7 @@ export default function Layout({ children }) {
         css={css`
           width: 100vw;
           height: 100%;
+          overflow: hidden;
         `}
       >
         <div //by using intersectionObeserver we determine when the user scrolls over this hidden div, then we show the bottom shadow of the header
@@ -49,7 +50,6 @@ export default function Layout({ children }) {
         />
         {children}
       </main>
-      <h3>FOOTER</h3>
     </>
   );
 }
