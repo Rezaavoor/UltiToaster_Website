@@ -61,7 +61,7 @@ export default function Header() {
       >
         <NavLink
           css={css`
-            margin-left: 5vw;
+            margin-left: 15px;
             width: 80px;
           `}
           to="/"
