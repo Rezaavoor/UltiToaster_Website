@@ -11,11 +11,11 @@ export default function App() {
     <Layout>
       <div
         css={css`
-          height: 280vh;
+          height: 2800px;
           position: relative;
         `}
       >
-        <Background src={backgroundSvg} />
+        <Background src={backgroundSvg} reverse width="100vw" height="2800px" />
         app
       </div>
     </Layout>
