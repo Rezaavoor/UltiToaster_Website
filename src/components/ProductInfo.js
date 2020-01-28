@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-import themes from '../themes/themes';
+import themes, { mediaQueries as mq } from '../themes/themes';
 
 const Infos = styled.div`
   width: 100%;
@@ -18,6 +18,12 @@ const Infos = styled.div`
       justify-content: flex-end;
     }
   }
+  ${mq[2]} {
+    margin-top: 150px;
+  }
+  ${mq[3]} {
+    margin-top: 100px;
+  }
 `;
 const Info = styled.div`
   width: 100%;
@@ -27,11 +33,22 @@ const Info = styled.div`
   align-items: center;
   height: 400px;
   color: ${themes.text_secondary};
+  ${mq[2]} {
+    flex-direction: column;
+    &:nth-last-of-type(odd) {
+      flex-direction: column-reverse;
+    }
+    height: 420px;
+    margin-top: 10px;
+  }
 `;
 const ImageContainer = styled.div`
   width: 40%;
   display: flex;
   justify-content: flex-start;
+  ${mq[3]} {
+    width: 60%;
+  }
 `;
 const TextContainer = styled.div`
   width: 60%;
@@ -39,7 +56,26 @@ const TextContainer = styled.div`
   top: -20px;
   font-size: 1.2rem;
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  ${mq[2]} {
+    width: 90%;
+    text-align: center;
+  }
+  ${mq[3]} {
+    font-size: 1rem;
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+`;
+const Image = styled(Img)`
+  width: 70%;
+  ${mq[1]} {
+    width: 90%;
+  }
+  ${mq[2]} {
+    width: 100%;
   }
 `;
 export default function ProductInfo() {
@@ -58,12 +94,7 @@ export default function ProductInfo() {
     <Infos>
       <Info>
         <ImageContainer>
-          <Img
-            fluid={image.sharp.fluid}
-            css={css`
-              width: 70%;
-            `}
-          />
+          <Image fluid={image.sharp.fluid} />
         </ImageContainer>
         <TextContainer>
           <h1>Do everything from your bed!</h1>
@@ -71,10 +102,7 @@ export default function ProductInfo() {
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam
+            et ea rebum.
           </p>
         </TextContainer>
       </Info>
@@ -85,29 +113,16 @@ export default function ProductInfo() {
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam
+            et ea rebum.
           </p>
         </TextContainer>
         <ImageContainer>
-          <Img
-            fluid={image.sharp.fluid}
-            css={css`
-              width: 70%;
-            `}
-          />
+          <Image fluid={image.sharp.fluid} />
         </ImageContainer>
       </Info>
       <Info>
         <ImageContainer>
-          <Img
-            fluid={image.sharp.fluid}
-            css={css`
-              width: 70%;
-            `}
-          />
+          <Image fluid={image.sharp.fluid} />
         </ImageContainer>
         <TextContainer>
           <h1>Have your app in multiple devices</h1>
@@ -115,10 +130,7 @@ export default function ProductInfo() {
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam
+            et ea rebum.
           </p>
         </TextContainer>
       </Info>
@@ -129,19 +141,11 @@ export default function ProductInfo() {
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam
+            et ea rebum.
           </p>
         </TextContainer>
         <ImageContainer>
-          <Img
-            fluid={image.sharp.fluid}
-            css={css`
-              width: 70%;
-            `}
-          />
+          <Image fluid={image.sharp.fluid} />
         </ImageContainer>
       </Info>
     </Infos>

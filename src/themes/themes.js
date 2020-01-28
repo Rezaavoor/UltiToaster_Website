@@ -6,4 +6,8 @@ const colors = {
   white: '#FFFFFF',
 };
 
+const breakPoints = [1300, 950, 768, 576];
+const mediaQueries = breakPoints.map(bp => `@media (max-width: ${bp}px)`);
+
+export { mediaQueries };
 export default colors;

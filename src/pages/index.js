@@ -1,8 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { css } from '@emotion/core';
-import styled from '@emotion/styled';
-import themes from '../themes/themes';
 import Background from '../components/Background';
 import backgroundSvg from '../../images/product-background.svg';
 import ultiToasterSvg from '../../images/UltiToaster.svg';
@@ -10,6 +8,7 @@ import Thumbnails from '../components/Thumbnails';
 import MainHero from '../components/mainHero/MainHero';
 import ProductInfo from '../components/ProductInfo';
 import Footer from '../components/Footer';
+import { mediaQueries as mq } from '../themes/themes';
 
 export default function Product() {
   //prettier-ignore
@@ -21,6 +20,9 @@ export default function Product() {
           position: absolute;
           right: 0;
           top: 600px;
+          ${mq[2]}{
+            width: 100%;
+          }
         `} />
       <Thumbnails animate={{to:{x:'-50vw',y:'0'},duration:'50s'}} dotsDarkSmall width="100px" height="235px" left="90%" top="-44px" />
       <Thumbnails animate={{to:{x:'100px',y:'0'},duration:'30s'}} dotsLightSmall width="230px" height="352px" left="0" top="200px" opacity="0.5" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import themes from '../../themes/themes';
+import themes, { mediaQueries as mq } from '../../themes/themes';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import indicatorBaseImg from '../../../images/indicator-base.svg';
@@ -14,25 +14,55 @@ export default function MainHero() {
     height: 100%;
     position: relative;
     z-index: 1;
+    ${mq[2]} {
+      flex-direction: column;
+    }
   `;
   const Image = styled(Img)`
     /* height: 100%; */
     width: 70%;
   `;
   const Text = styled.h1`
-    width: 360px;
+    width: 28%;
     height: 420px;
-    padding: 80px;
+    padding: 6%;
     font-style: italic;
+    position: relative;
+    ${mq[1]} {
+      margin-top: 50px;
+    }
+    ${mq[2]} {
+      margin-top: 0;
+      padding: 0;
+      width: 80%;
+      text-align: center;
+      br {
+        display: none;
+      }
+      font-size: 1.5rem;
+      /* height: 80%; */
+    }
+    ${mq[3]} {
+      top: -50px;
+    }
   `;
   const ImageContainer = styled.div`
-    width: calc(
-      1300px - 720px
-    ); /* 720px is twice as Text's width which makes Imagecontainer be in center all the time(360px -- container -- 360px) */
+    width: 45%;
     height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    ${mq[1]} {
+      width: 70%;
+    }
+    ${mq[2]} {
+      top: -50px;
+    }
+    ${mq[3]} {
+      width: 100%;
+      top: -80px;
+    }
   `;
   const Indicator = styled.div`
     height: 70%;
@@ -84,14 +114,22 @@ export default function MainHero() {
     letter-spacing: 0.1rem;
     text-shadow: 7px 7px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.2);
-    margin: -100px 80px;
     position: relative;
+    left: 80px;
+    top: -100px;
     z-index: 1;
     cursor: pointer;
     &:hover {
-      /* background-color: ${themes.yellow}; */
       border: 2px solid ${themes.yellow};
-      /* color: ${themes.text_primary}; */
+    }
+    ${mq[2]} {
+      top: -80px;
+    }
+    ${mq[3]} {
+      height: 45px;
+      line-height: 45px;
+      font-size: 0.8rem;
+      left: calc((100vw - 200px) / 2);
     }
   `;
 

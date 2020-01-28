@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
-import themes from '../themes/themes';
+import themes, { mediaQueries as mq } from '../themes/themes';
 import Logo from '../../images/logo.svg';
 
 const NavLink = styled(Link)`
@@ -63,6 +63,9 @@ export default function Header() {
           css={css`
             margin-left: 15px;
             width: 80px;
+            ${mq[3]} {
+              width: 60px;
+            }
           `}
           to="/"
         >
@@ -80,6 +83,13 @@ export default function Header() {
               &:hover {
                 box-shadow: 0 2px 2px -2px #000;
               }
+            }
+            ${mq[3]} {
+              left: auto;
+              transform: translate(0);
+              right: 0;
+              width: 80vw;
+              font-size: 0.8rem;
             }
           `}
         >
