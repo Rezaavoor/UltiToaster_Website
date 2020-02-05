@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import themes, { mediaQueries as mq } from '../../themes/themes';
+import themes, { mediaQueries as mq } from '../themes/themes';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import indicatorBaseImg from '../../../images/indicator-base.svg';
+import indicatorBaseImg from '../../images/indicator-base.svg';
 
 export default function MainHero() {
   const ProductContainer = styled.div`

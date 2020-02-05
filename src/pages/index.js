@@ -5,7 +5,7 @@ import Background from '../components/Background';
 import backgroundSvg from '../../images/product-background.svg';
 import ultiToasterSvg from '../../images/UltiToaster.svg';
 import Thumbnails from '../components/Thumbnails';
-import MainHero from '../components/mainHero/MainHero';
+import MainHero from '../components/MainHero';
 import ProductInfo from '../components/ProductInfo';
 import Footer from '../components/Footer';
 import { mediaQueries as mq } from '../themes/themes';
