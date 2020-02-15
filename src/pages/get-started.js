@@ -21,12 +21,16 @@ export default function GetStarted() {
       <Thumbnails animate={{to:{x:'80vw',y:'0px'},duration:'60s'}} dotsLightSmall width="150px" height="352px" left="-30px" top="2000px" opacity="0.8" />
     </>
   );
-  const [height, setHeight] = useState(
-    window.innerWidth > 768 ? '1500px' : '1000px',
-  );
-  const [background, setBackground] = useState(
-    window.innerWidth > 768 ? backgroundSvg : backgroundSvgMobile,
-  ); //use different background in phone devices
+  const [height, setHeight] = useState(() => {
+    if (typeof window !== 'undefined')
+      return window.innerWidth > 768 ? '1500px' : '1000px';
+  });
+  const [background, setBackground] = useState(() => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth > 768) return backgroundSvg;
+      else return backgroundSvgMobile;
+    }
+  }); //use different background in phone devices
   useEffect(() => {
     window.addEventListener('resize', () => {
       //use mobile background for devices smaller than 768
@@ -58,6 +62,30 @@ export default function GetStarted() {
           getStarted
           src={background}
         />
+        <h1
+          css={css`
+            position: absolute;
+            font-style: italic;
+            top: 160px;
+            left: 18%;
+            z-index: 1;
+            ${mq[1]} {
+              left: 10%;
+            }
+            ${mq[2]} {
+              br {
+                display: none;
+              }
+              top: 100px;
+              left: 5%;
+              font-size: 1.2rem;
+            }
+          `}
+        >
+          BEFORE <br />
+          YOU CAN <br />
+          ULTITOAST:
+        </h1>
         {allThumbnails}
       </div>
     </Layout>
