@@ -34,11 +34,12 @@ export default function Product() {
       <Thumbnails animate={{to:{x:'80vw',y:'0px'},duration:'60s'}} dotsLightSmall width="150px" height="352px" left="-30px" top="2000px" opacity="0.8" />
     </>
   );
+  const height = '3200px';
   return (
     <Layout>
       <div
         css={css`
-          height: 3200px;
+          height: ${height};
           width: 100%;
           max-width: 1300px; /* everything is this width except the background image */
           margin: auto;
@@ -46,7 +47,7 @@ export default function Product() {
           border: 1px solid #00000000; /* a weird bug is fixed by just adding a hidden border to this guy! */
         `}
       >
-        <Background src={backgroundSvg} width="100vw" height="3200px" />
+        <Background src={backgroundSvg} width="100vw" height={height} />
         <MainHero />
         <ProductInfo />
         <Footer />

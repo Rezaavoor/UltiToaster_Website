@@ -25,6 +25,7 @@ export default function App() {
       <Thumbnails animate={{to:{x:'80vw',y:'0px'},duration:'60s'}} dotsLightSmall width="150px" height="352px" left="-30px" top="2000px" opacity="0.8" />
     </>
   );
+  const height = '2200px';
   const Info = styled.div`
     height: 620px;
     width: 100%;
@@ -67,7 +68,7 @@ export default function App() {
       }
       h2:nth-last-of-type(odd) {
         text-align: start;
-        margin: auto;
+        margin: 10px auto 0 auto;
       }
     }
     ${mq[3]} {
@@ -111,7 +112,7 @@ export default function App() {
     <Layout>
       <div
         css={css`
-          height: 2200px;
+          height: ${height};
           width: 100%;
           max-width: 1300px; /* everything has this width except the background image */
           margin: auto;
@@ -119,7 +120,7 @@ export default function App() {
           border: 1px solid #00000000; /* a weird bug is fixed by just adding a hidden border to this guy! */
         `}
       >
-        <Background src={backgroundSvg} width="100vw" height="2200px" />
+        <Background src={backgroundSvg} width="100vw" height={height} />
         <AppMain />
         <Info>
           <InfoText>
@@ -141,7 +142,7 @@ export default function App() {
             <Image fluid={phonesImage.sharp.fluid} />
           </InfoImage>
         </Info>
-        <Footer />
+        <Footer height="400px" />
         {allThumbnails}
       </div>
     </Layout>
