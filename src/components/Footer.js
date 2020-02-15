@@ -3,12 +3,12 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import themes from '../themes/themes';
 
-export default function Footer() {
+export default function Footer(props) {
   const Container = styled.div`
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 500px;
+    height: ${props.height || '500px'};
     /* border: 1px solid black; */
     margin-bottom: 50px;
     text-align: center;
