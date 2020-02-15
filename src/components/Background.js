@@ -3,7 +3,9 @@ import styled from '@emotion/styled';
 import { mediaQueries as mq } from '../themes/themes';
 
 export default function Background(props) {
-  let [width, setWidth] = useState(window.innerWidth);
+  let [width, setWidth] = useState(() => {
+    if (typeof window !== 'undefined') return window.innerWidth;
+  });
   useEffect(() => {
     window.addEventListener('resize', () => {
       setWidth(window.innerWidth);
